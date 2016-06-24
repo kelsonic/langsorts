@@ -1,0 +1,22 @@
+{
+  "name": "languagetrees",
+  "version": "1.0.0",
+  "description": "This is a web app that will show you the code for various decision trees in multiple programming languages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelsonic/languagetrees.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelsonic/languagetrees/issues"
+  },
+  "homepage": "https://github.com/kelsonic/languagetrees#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
