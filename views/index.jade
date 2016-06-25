@@ -1,5 +1,35 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row.center
+    .col.s12.m6
+      h2.light-blue-text Algorithm:
+      ul.col.s6
+        li Bubble
+        li Heap
+        li Insertion
+        li Merge
+      ul.col.s6
+        li Selection
+        li Shell
+        li Quick
+        li Quick3
+    .col.s12.m6
+      h2.light-blue-text Language:
+      ul
+        li Ruby
+        li JavaScript
+  .row
+    .col.s12.m10.offset-m1.l8.offset-l2.code
+      pre
+        code.javascript.
+          console.log("hello!");
+          function() {
+            thisIsSparta = false; // This is a really long comment that is going to take up a ton of screen space for days and days and days
+          }
+  .row.stats
+    .col.s12.center
+      h3.orange-text Space Complexity:
+      p.flow-text O(k)
+      h3.orange-text Time Complexity:
+      p.flow-text O(over 9000)
