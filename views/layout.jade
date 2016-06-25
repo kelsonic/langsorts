@@ -6,7 +6,10 @@ html
     block head
       link(rel="stylesheet", href="/stylesheets/layouts.css")
       link(rel="stylesheet", href="/stylesheets/materialize.css")
+      link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css")
     block scripts
+      script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js")
+      script hljs.initHighlightingOnLoad();
 
   body
     header
@@ -21,21 +24,9 @@ html
       footer.page-footer.orange
         .container
           .row
-            .col.l6.s12
-              h5.white-text Footer Content
-              p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
-            .col.l4.offset-l2.s12
-              h5.white-text Links
-              ul
-                li
-                  a.grey-text.text-lighten-3(href='#!') Link 1
-                li
-                  a.grey-text.text-lighten-3(href='#!') Link 2
-                li
-                  a.grey-text.text-lighten-3(href='#!') Link 3
-                li
-                  a.grey-text.text-lighten-3(href='#!') Link 4
+            .col.s12.center
+              h5.white-text Sorting Algorithms by Language
+              p.grey-text.text-lighten-4 Sort it. Sort it good.
         .footer-copyright
-          .container
-            | © 2014 Copyright Text
-            a.grey-text.text-lighten-4.right(href='#!') More Links
+          .container.center
+            span Copyright &copy; 2016
