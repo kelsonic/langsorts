@@ -4,7 +4,15 @@ This is a web app that will show you the code for various decision trees in mult
 
 ## Getting Started
 
-...
+```
+git clone https://github.com/kelsonic/languagetrees.git
+
+cd /languagetrees
+
+npm install
+
+npm start
+```
 
 ## Dependencies
 
