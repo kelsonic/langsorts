@@ -17,25 +17,13 @@ npm start
 ## Dependencies
 
 ```
-"babel-core": "^6.9.1",
-"body-parser": "^1.15.1",
-"compression": "^1.6.2",
-"cross-env": "^1.0.8",
-"cuid": "^1.3.8",
-"express": "^4.13.4",
-"intl": "^1.2.4",
-"isomorphic-fetch": "^2.2.1",
-"limax": "^1.3.0",
-"mongoose": "^4.4.20",
-"react": "^15.1.0",
-"react-dom": "^15.1.0",
-"react-helmet": "^3.1.0",
-"react-intl": "^2.1.2",
-"react-redux": "^4.4.5",
-"react-router": "^2.4.1",
-"redux": "^3.5.2",
-"redux-thunk": "^2.1.0",
-"sanitize-html": "^1.11.4"
+"body-parser": "~1.13.2",
+"cookie-parser": "~1.3.5",
+"debug": "~2.2.0",
+"express": "~4.13.1",
+"jade": "~1.11.0",
+"morgan": "~1.6.1",
+"serve-favicon": "~2.3.0"
 ```
 
 ## Contributing
