@@ -1,28 +1,63 @@
 extends layout
 
 block content
-  .row.center
+  form.row.center(action="/", method="GET")
     .col.s12.m6
+      
+
+      //- Choose Algorithm
       h2.light-blue-text Algorithm:
-      ul.col.s6
-        li Bubble
-        li Heap
-        li Insertion
-        li Merge
-      ul.col.s6
-        li Selection
-        li Shell
-        li Quick
-        li Quick3
+      .col.s4.offset-s2
+        p
+          input(name="alg", type="radio", id="bubble" checked value="bubble")
+          label(for="bubble") Bubble
+        p
+          input(name="alg", type="radio", id="heap" value="heap")
+          label(for="heap") Heap
+        p
+          input(name="alg", type="radio", id="insertion" value="insertion")
+          label(for="insertion") Insertion
+        p
+          input(name="alg", type="radio", id="merge" value="merge")
+          label(for="merge") Merge
+      .col.s4
+        p
+          input(name="alg", type="radio", id="selection" value="selection")
+          label(for="selection") Selection
+        p
+          input(name="alg", type="radio", id="shell" value="shell")
+          label(for="shell") Shell
+        p
+          input(name="alg", type="radio", id="quick" value="quick")
+          label(for="quick") Quick
+        p
+          input(name="alg", type="radio", id="quick3", value="quick3")
+          label(for="quick3") Quick3
+
+
+    //- Choose Language
     .col.s12.m6
       h2.light-blue-text Language:
-      ul
-        li Ruby
-        li JavaScript
+      .col.s4.offset-s2
+        p
+          input(name="lang", type="radio", id="ruby" checked value="ruby")
+          label(for="ruby", class="red-text") Ruby
+      .col.s4
+        p
+          input(name="lang", type="radio", id="javascript" value="javascript")
+          label(for="javascript", class="orange-text") JavaScript
+    
+
+    //- Submit
+    .row
+      .col.s12
+        br
+        br
+        button(type="submit", class="btn waves-effect waves-orange light-green") Show Optimized Algorithm
+
 
   .row
-    .col.s12.m10.offset-m1.l8.offset-l2.code
-      h3.center= language
+    .col.s12.m10.offset-m1.l8.offset-l2
       pre
         code(class=language)= algorithm
 
