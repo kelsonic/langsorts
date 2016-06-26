@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+
+    title Lang Sort
+    block head
+      link(rel="stylesheet", href="/stylesheets/layouts.css")
+      link(rel="stylesheet", href="/stylesheets/materialize.css")
+      link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css")
+    block scripts
+      script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js")
+      script hljs.initHighlightingOnLoad();
+
+  body
+    header
+      block nav
+        nav.orange
+          .nav-wrapper
+            a.brand-logo.center(href='/') Lang Sort
+    main
+      block content
+
+    block footer
+      footer.page-footer.orange
+        .container
+          .row
+            .col.s12.center
+              h5.white-text Sorting Algorithms by Programming Language
+              p.grey-text.text-lighten-4 Sort it. Sort it good.
+        .footer-copyright
+          .container.center
+            span Copyright &copy; 2016. Made by 
+              a(href="https://github.com/kelsonic", class="light-blue-text text-darken-3") Kelsonic 
+              | and 
+              a(href="https://github.com/vic8722", class="light-blue-text text-darken-3") Victoria.

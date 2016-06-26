@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .row.center
+    .col.s12.m6
+      h2.light-blue-text Algorithm:
+      ul.col.s6
+        li Bubble
+        li Heap
+        li Insertion
+        li Merge
+      ul.col.s6
+        li Selection
+        li Shell
+        li Quick
+        li Quick3
+    .col.s12.m6
+      h2.light-blue-text Language:
+      ul
+        li Ruby
+        li JavaScript
+
+  .row
+    .col.s12.m10.offset-m1.l8.offset-l2.code
+      h3.center= language
+      pre
+        code(class=language)= algorithm
+
+  .row.stats
+    .col.s12.center
+      h3.orange-text Space Complexity:
+      p.flow-text= space
+      
+      h3.orange-text Time Complexity:
+      p.flow-text= time
