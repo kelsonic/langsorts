@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Lang Sort
+=======
+# Language Trees
+>>>>>>> 6a749d1f13e6f573bdc87f0133f1657ceede1c05
 
 This is a web app that will show you the code for various decision trees in multiple programming languages.
 
