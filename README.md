@@ -11,7 +11,6 @@ cd /languagetrees
 
 npm install
 
-
 // do this in one terminal
 mongod --dbpath /Users/kelsonic/Desktop/clones/languagetrees/data
 

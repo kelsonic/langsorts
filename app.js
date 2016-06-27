@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 // Set up database with MongoDB
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/test');
+var db = monk('localhost:27017/langsort');
 
 var routes = require('./routes/index');
 
