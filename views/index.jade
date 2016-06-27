@@ -1,40 +1,41 @@
 extends layout
 
 block content
+
   form.row.center(action="/", method="GET")
     .col.s12.m6
       
 
       //- Choose Algorithm
-      h2.light-blue-text Algorithm:
+      h2.orange-text Algorithm
       .col.s4.offset-s2
         p
           input(name="alg", type="radio", id="bubble" checked value="bubble")
-          label(for="bubble") Bubble
+          label(for="bubble", class="light-blue-text") Bubble
         p
           input(name="alg", type="radio", id="heap" value="heap")
-          label(for="heap") Heap
+          label(for="heap", class="light-blue-text") Heap
         p
           input(name="alg", type="radio", id="insertion" value="insertion")
-          label(for="insertion") Insertion
+          label(for="insertion", class="light-blue-text") Insertion
         p
           input(name="alg", type="radio", id="merge" value="merge")
-          label(for="merge") Merge
+          label(for="merge", class="light-blue-text") Merge
       .col.s4
         p
           input(name="alg", type="radio", id="selection" value="selection")
-          label(for="selection") Selection
+          label(for="selection", class="light-blue-text") Selection
         p
           input(name="alg", type="radio", id="shell" value="shell")
-          label(for="shell") Shell
+          label(for="shell", class="light-blue-text") Shell
         p
           input(name="alg", type="radio", id="quick" value="quick")
-          label(for="quick") Quick
+          label(for="quick", class="light-blue-text") Quick
 
 
     //- Choose Language
     .col.s12.m6
-      h2.light-blue-text Language:
+      h2.orange-text Language
       .col.s4.offset-s2
         p
           input(name="lang", type="radio", id="ruby" checked value="ruby")
@@ -50,18 +51,21 @@ block content
       .col.s12
         br
         br
-        button(type="submit", class="btn waves-effect waves-orange light-green") Show Optimized Algorithm
+        button(type="submit", class="btn btn-large waves-effect waves-orange light-green") Build
 
 
   .row
     .col.s12.m10.offset-m1.l8.offset-l2
-      pre
+      pre.z-depth-3
         code(class=language)= algorithm
 
-  .row.stats
-    .col.s12.center
-      h3.orange-text Space Complexity:
-      p.flow-text= space
-      
-      h3.orange-text Time Complexity:
-      p.flow-text= time
+  .row.stats.center
+    .col.s4.offset-s2
+      h3.orange-text Space Complexity
+      .divider
+      p.flow-text.red-text Worst: #{space.worst}
+    .col.s4
+      h3.orange-text Time Complexity
+      .divider
+      p.flow-text.light-blue-text Best: #{time.best}
+      p.flow-text.red-text Worst: #{time.worst}
