@@ -1,6 +1,6 @@
 # Lang Sort
 
-This is a web app that will show you the code for various decision trees in multiple programming languages.
+This is a web app that will show you the code for various sorting algorithms in multiple programming languages.
 
 ## Getting Started
 
@@ -15,6 +15,7 @@ npm install
 mongod --dbpath /Users/kelsonic/Desktop/clones/languagetrees/data
 
 // do this in a separate terminal
+seed
 npm start
 ```
 
@@ -26,6 +27,8 @@ npm start
 "debug": "~2.2.0",
 "express": "~4.13.1",
 "jade": "~1.11.0",
+"mongo": "^0.1.0",
+"monk": "^2.1.0",
 "morgan": "~1.6.1",
 "serve-favicon": "~2.3.0"
 ```
