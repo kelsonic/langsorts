@@ -1,8 +1,8 @@
-<center><a href="http://www.langsorts.com">![Lang Sorts Logo](https://github.com/kelsonic/langsort/blob/master/public/images/logo-readme.png)</a></center>
+<a href="http://www.langsorts.com">![Lang Sorts Logo](https://github.com/kelsonic/langsort/blob/master/public/images/logo-readme.png)</a>
 
 Discover how to code sorting algorithms in multiple programming languages.
 
-## Getting Started
+## Getting Started Locally
 
 ```
 git clone https://github.com/kelsonic/languagetrees.git
@@ -35,7 +35,9 @@ npm start
 
 ## Contributing
 
-Do you see any errors? Want to add your own feature? Make a pull-request, we'll review it, and then merge it!
+Do you see any errors? Want to add your own sorting algorithm or language? 
+
+Make a pull-request, we'll review it, and then we'll merge it!
 
 ## Contributors
 
