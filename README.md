@@ -1,6 +1,6 @@
-<a href="http://www.langsorts.com">![Lang Sorts Logo](https://github.com/kelsonic/langsort/blob/master/public/images/logo-readme.png)</a>
+![Lang Sorts](/public/images/readme-logo.png)
 
-Discover how to code sorting algorithms in multiple programming languages.
+Discover how to code sorting algorithms in multiple programming languages. (Built with Node.js, Express.js, and MongoDB)
 
 ## Getting Started Locally
 
@@ -19,19 +19,11 @@ seed
 npm start
 ```
 
-## Dependencies
+## Usage
 
-```
-"body-parser": "~1.13.2",
-"cookie-parser": "~1.3.5",
-"debug": "~2.2.0",
-"express": "~4.13.1",
-"jade": "~1.11.0",
-"mongo": "^0.1.0",
-"monk": "^2.1.0",
-"morgan": "~1.6.1",
-"serve-favicon": "~2.3.0"
-```
+View it at [www.LangSorts.com](http://langsorts.com).
+
+![LangSorts example](/public/images/readme-image.jpg)
 
 ## Contributing
 
@@ -41,8 +33,8 @@ Make a pull-request, we'll review it, and then we'll merge it!
 
 ## Contributors
 
-1. [Victoria](https://github.com/vic8722)
-2. [Kelsonic](https://github.com/kelsonic)
+* [Victoria](https://github.com/vic8722)
+* [Kelsonic](https://github.com/kelsonic)
 
 ## License
-MIT License. View it [here](https://github.com/kelsonic/languagetrees/blob/master/README.md).
+MIT License. View it [here](LICENSE).
