@@ -1,6 +1,4 @@
-![Lang Sorts Logo](https://github.com/kelsonic/langsort/blob/master/public/images/logo-readme.png)
-
-[www.langsorts.com](http://www.langsorts.com/)
+<a href="http://www.langsorts.com">![Lang Sorts Logo](https://github.com/kelsonic/langsort/blob/master/public/images/logo-readme.png)</a>
 
 This is a web app that will show you the code for various sorting algorithms in multiple programming languages.
 
