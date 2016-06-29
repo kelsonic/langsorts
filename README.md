@@ -1,6 +1,4 @@
-<link rel="stylesheet", href='https://fonts.googleapis.com/css?family=Raleway:100,400'>
-
-<h1 style="font-family: 'Raleway', sans-serif; font-weight: 100;">Lang <span style="font-weight: 400">Sorts</span></h1>
+![Lang Sorts Logo](../public/images/logo-readme.png)
 
 [www.langsorts.com](http://www.langsorts.com/)
 
