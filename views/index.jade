@@ -3,12 +3,10 @@ extends layout
 block content
 
   form.row.center(action="/", method="GET")
-    .col.s12.m6
-      
-
-      //- Choose Algorithm
+    //- Choose Algorithm
+    .col.s12.m6.l4.offset-l2
       h2.orange-text Sorting Algorithms
-      .col.s4.offset-s2
+      .col.s6.l4.offset-l2
         p
           input(name="alg", type="radio", id="bubble" checked value="bubble")
           label(for="bubble", class="light-blue-text") Bubble
@@ -21,7 +19,7 @@ block content
         p
           input(name="alg", type="radio", id="merge" value="merge")
           label(for="merge", class="light-blue-text") Merge
-      .col.s4
+      .col.s6.l4
         p
           input(name="alg", type="radio", id="selection" value="selection")
           label(for="selection", class="light-blue-text") Selection
@@ -34,13 +32,13 @@ block content
 
 
     //- Choose Language
-    .col.s12.m6
+    .col.s12.m6.l4
       h2.orange-text Languages
-      .col.s4.offset-s2
+      .col.s6.l4.offset-l2
         p
           input(name="lang", type="radio", id="ruby" checked value="ruby")
           label(for="ruby", class="red-text") Ruby
-      .col.s4
+      .col.s6.l4
         p
           input(name="lang", type="radio", id="javascript" value="javascript")
           label(for="javascript", class="orange-text") JavaScript
@@ -63,9 +61,12 @@ block content
     .col.s4.offset-s2
       h3.orange-text Space Complexity
       .divider
-      p.flow-text.red-text Worst: #{space.worst}
+      p.flow-text.red-text Worst: 
+        span.black-text #{space.worst}
     .col.s4
       h3.orange-text Time Complexity
       .divider
-      p.flow-text.light-blue-text Best: #{time.best}
-      p.flow-text.red-text Worst: #{time.worst}
+      p.flow-text.light-blue-text Best: 
+        span.black-text #{time.best}
+      p.flow-text.red-text Worst: 
+        span.black-text #{time.worst}
