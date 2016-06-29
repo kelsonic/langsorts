@@ -1,6 +1,8 @@
-# Lang Sorts
+<link rel="stylesheet", href='https://fonts.googleapis.com/css?family=Raleway:100,400'>
 
-![www.langsorts.com](http://www.langsorts.com/)
+<h1 style="font-family: 'Raleway', sans-serif; font-weight: 100;">Lang <span style="font-weight: 400">Sorts</span></h1>
+
+[www.langsorts.com](http://www.langsorts.com/)
 
 This is a web app that will show you the code for various sorting algorithms in multiple programming languages.
 
