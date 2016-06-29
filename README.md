@@ -1,4 +1,4 @@
-# Lang Sort
+# Lang Sorts
 
 This is a web app that will show you the code for various sorting algorithms in multiple programming languages.
 
