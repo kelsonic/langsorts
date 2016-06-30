@@ -5,14 +5,14 @@ Discover how to code sorting algorithms in multiple programming languages. (Buil
 ## Getting Started Locally
 
 ```
-git clone https://github.com/kelsonic/languagetrees.git
+git clone https://github.com/kelsonic/langsorts.git
 
-cd /languagetrees
+cd /langsorts
 
 npm install
 
 // do this in one terminal
-mongod --dbpath /Users/kelsonic/Desktop/clones/languagetrees/data
+mongod --dbpath /Users/kelsonic/Desktop/clones/langsorts/data
 
 // do this in a separate terminal
 seed
@@ -27,7 +27,7 @@ View it at [www.LangSorts.com](http://langsorts.com).
 
 ## Contributing
 
-Do you see any errors? Want to add your own sorting algorithm or language? 
+Do you see any errors? Want to add your own sorting algorithm or language?
 
 Make a pull-request, we'll review it, and then we'll merge it!
 
