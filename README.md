@@ -18,7 +18,7 @@ View it at [www.LangSorts.com](http://langsorts.com).
 
 ![LangSorts example](/langsorts-react/public/images/readme-image.jpg)
 
-## Using the API
+## Using the API (Server-Side Framework)
 
 ```
 git clone https://github.com/kelsonic/langsorts.git
@@ -40,7 +40,7 @@ npm start
 
 The API will be running on [localhost:9000](http://localhost:9000/).
 
-## Using the React front-end
+## Using the Client-Side Framework
 
 ```
 // Assuming you have already cloned the repo
