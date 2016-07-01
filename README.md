@@ -16,7 +16,7 @@ To use either the backend API or the front-end, you will need to install [Node](
 
 View it at [www.LangSorts.com](http://langsorts.com).
 
-![LangSorts example](/public/images/readme-image.jpg)
+![LangSorts example](/langsorts-react/public/images/readme-image.jpg)
 
 ## Using the API
 
