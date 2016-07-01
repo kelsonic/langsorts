@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/langsort",
+	"dev": "localhost/langsort",
+	"prod": "https://langsort.herokuapp.com/langsort"
+}

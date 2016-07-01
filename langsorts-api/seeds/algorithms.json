@@ -1,0 +1,152 @@
+[
+  {
+    "lang": "ruby",
+    "alg": {
+      "bubble": {
+        "algorithm": "\nunsorted_array = [7, 3, 6, 1, 9, 8, 2, 5, 4]\n\ndef bubble_sort(array)\n  n = array.length\n  loop do\n    swapped = false\n\n    (n-1).times do |i|\n      if array[i] > array[i+1]\n        array[i], array[i+1] = array[i+1], array[i]\n        swapped = true\n      end\n      p i\n    end\n\n    break if not swapped\n  end\n\n  array\nend\n\nbubble_sort(unsorted_array) # [1,2,3,4,5,6,7,8,9]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n²)"
+        }
+      },
+      "heap": {
+        "algorithm": "\nunsorted_array = [35, -8, 11, 1, 68, 0, 3]\n\ndef heap_sort(array)  \n  n = array.size  \n  a = [nil] + array             # heap root [0]=>[1]  \n  (n / 2).downto(1) do |i|  \n    down_heap(a, i, n)  \n  end  \n  while n > 1  \n    a[1], a[n] = a[n], a[1]  \n    n -= 1  \n    down_heap(a, 1, n)  \n  end  \n  a.drop(1)                     # heap root [1]=>[0]  \nend  \n  \ndef down_heap(a, parent, limit)  \n  wk = a[parent]  \n  while (child = 2 * parent) <= limit  \n    child += 1  if child < limit and a[child] < a[child + 1]  \n    break  if wk >= a[child]  \n    a[parent] = a[child]  \n    parent = child  \n  end  \n  a[parent] = wk  \nend  \n  \nheap_sort(unsorted_array)  #=> [-8, 0, 1, 3, 11, 35, 68]  \n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "insertion": {
+        "algorithm": "\nunsorted_array = [1, 5, 3, 4, 6, 3]\n\ndef insertion_sort(array)\n  final = [array[0]]\n  array.delete_at(0)\n  # main code\n  for i in array\n    final_index = 0\n    while final_index < final.length\n      if i <= final[final_index]\n        final.insert(final_index,i)\n        break\n      elsif final_index == final.length-1\n        final.insert(final_index+1,i)\n        break\n      end\n      final_index+=1\n    end\n  end\n  # output\n  final\nend\n\ninsertion_sort(unsorted_array) # [1, 3, 3, 4, 5, 6]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n²)"
+        }
+      },
+      "merge": {
+        "algorithm": "\nunsorted_array = [1, 5, 3, 4, 6, 3]\n\ndef mergesort(list)\n  return list if list.size <= 1\n  mid = list.size / 2\n  left = list[0, mid]\n  right = list[mid, list.size]\n  merge(mergesort(left), mergesort(right))\nend\n\ndef merge(left, right)\n  sorted = []\n  until left.empty? || right.empty?\n    if left.first <= right.first\n      sorted << left.shift\n    else\n      sorted << right.shift\n    end\n  end\n  sorted.concat(left).concat(right)\nend\n\nmergesort(unsorted_array) # [1, 3, 3, 4, 5, 6]\n        ",
+        "space": {
+          "worst": "O(n)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "selection": {
+        "algorithm": "\nunsorted_array = [9,8,6,1,2,5,4,3,9,50,12,11]\n\ndef selection_sort(array)\n  n = array.size - 1\n\n  n.times do |i|\n    index_min = i\n\n    (i + 1).upto(n) do |j|\n      index_min = j if array[j] < array[index_min]\n    end\n\n    array[i], array[index_min] = array[index_min], array[i] if index_min != i\n  end\n  array\nend\n\nselection_sort(unsorted_array) # [1, 2, 3, 4, 5, 6, 8, 9, 9, 11, 12, 50]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "shell": {
+        "algorithm": "\nunsorted_array = [35, -8, 11, 1, 68, 0, 3]\n\ndef shell_sort(array)\n  inc = array.size / 2\n  while inc > 0\n    inc.upto(array.size-1) do |i|\n      j = i\n      temp = array[i]\n      while j >= inc and array[j-inc] > temp\n        array[j] = array[j - inc]\n        j -= inc\n      end\n      array[j] = temp\n    end\n    inc = (inc==2 ? 1 : inc*10/22)\n  end\n  array\nend\n\nshell_sort(unsorted_array) # [-8, 0, 1, 3, 11, 35, 68]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n (log(n))²)"
+        }
+      },
+      "quick": {
+        "algorithm": "\nunsorted_array = [5,1,2,9,5,9,7,4,8,0,5,3,2,5,8,0]\n\ndef quicksort(array)\n  return array if array.length <= 1\n\n  pivot_index = (array.length / 2)\n  pivot_value = array[pivot_index]\n  array.delete_at(pivot_index)\n\n  lesser = Array.new\n  greater = Array.new\n\n  array.each do |x|\n    if x <= pivot_value\n      lesser << x\n    else\n      greater << x\n    end\n  end\n\n  return quicksort(lesser) + [pivot_value] + quicksort(greater)\nend\n\nquicksort(unsorted_array) # [0, 0, 1, 2, 2, 3, 4, 5, 5, 5, 5, 7, 8, 8, 9, 9]\n        ",
+        "space": {
+          "worst": "O(log(n))"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n²)"
+        }
+      }
+    }
+  },
+  {
+    "lang": "javascript",
+    "alg": {
+      "bubble": {
+        "algorithm": "\nvar unsortedArray = [7, 3, 6, 1, 9, 8, 2, 5, 4];\n\nfunction bubble_sort(array) {\n  var n = array.length;\n  var swapped = true;\n  \n  while (swapped === true) {\n    swapped = false;\n  \n    for (var i = 0; i < n - 1; i++) {\n      \n      if (array[i] > array[i+1]) {\n        \n        // Swap variables\n        var current = array[i];\n        array[i] = array[i+1];\n        array[i+1] = current;\n\n        swapped = true\n      }\n    }\n  }\n  return array;\n}\n\nbubble_sort(unsortedArray); // [1,2,3,4,5,6,7,8,9]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n²)"
+        }
+      },
+      "heap": {
+        "algorithm": "\nvar unsortedArray = [35, -8, 11, 1, 68, 0, 3];\n\nfunction heap_sort(array) {\n\n  var n = array.length;\n  var a = [null].concat(array);\n\n  for (var i = Math.floor(n / 2); i > 0; i--) {\n    min_heap(a, i, n); \n  }\n\n  while (n > 1) {\n    var current = a[n];\n    a[n] = a[1];\n    a[1] = current;\n    n--;\n\n    min_heap(a, 1, n)  \n  }\n\n  return a.slice(1);\n} \n  \nfunction min_heap(a, parent, limit) {\n  var wk = a[parent];\n  var child;\n  while ((child = 2 * parent) <= limit) {\n    \n    if (child < limit && a[child] < a[child + 1]) {\n      child++;\n    }\n\n    if (wk >= a[child]) {\n      break;\n    }\n\n    a[parent] = a[child];\n    parent = child;\n  }\n  a[parent] = wk;\n}\n\nconsole.log(heap_sort(unsortedArray)); // [-8, 0, 1, 3, 11, 35, 68]  \n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "insertion": {
+        "algorithm": "\nvar unsortedArray = [1, 5, 3, 4, -6, 3]\n\nfunction insertion_sort(array) {\n  var final = [array[0]];\n  array = array.slice(1);\n  var n = array.length;\n  \n  for (var i = 0; i < n; i++) {\n    var finalIndex = 0;\n    while (finalIndex < final.length) {\n      if (array[i] <= final[finalIndex]) {\n        final.splice(finalIndex, 0, array[i]);\n        break;\n      }\n      else if (finalIndex === final.length-1) {\n        final.push(array[i]);\n        break;\n      }\n      finalIndex++;\n    }\n  }\n  return final;\n}\n\ninsertion_sort(unsortedArray);\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n²)"
+        }
+      },
+      "merge": {
+        "algorithm": "\nvar unsortedArray = [1, 5, 3, 4, 6, 3];\n\nfunction mergeSort(list) {\n  if (list.length <= 1) {\n    return list;\n  }\n  \n  var mid = Math.floor(list.length / 2);\n  var left = list.slice(0, mid); // list[0, mid]\n  var right = list.slice(mid, list.length); // list[mid, list.size]\n  return merge(mergeSort(left), mergeSort(right));\n}\n\nfunction merge(left, right) {\n  var sorted = [];\n  while (!(left.length === 0 || right.length === 0)) { //until left.empty? || right.empty?\n    if (left[0] <= right[0]) {\n      sorted.push(left.shift());\n    }\n    else {\n      sorted.push(right.shift());\n    }\n  }\n  return sorted.concat(left).concat(right);\n}\n\nmergeSort(unsortedArray); // [1, 3, 3, 4, 5, 6]\n        ",
+        "space": {
+          "worst": "O(n)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "selection": {
+        "algorithm": "\nvar unsortedArray = [9,8,6,1,2,5,4,3,9,50,12,11];\n\nfunction selectionSort(array) {\n  var n = array.length - 1;\n\n  for (var i = 0; i < n; i++) {\n    var indexMin = i;\n\n    for (var j = i + 1; j <= n; j++) {\n      if (array[j] < array[indexMin]) {\n        indexMin = j;\n      }\n    }\n\n    if (indexMin !== i) {\n      var current = array[i];\n      array[i] = array[indexMin];\n      array[indexMin] = current;\n    }\n  }\n  return array;\n}\n\nconsole.log(selectionSort(unsortedArray));\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n log(n))"
+        }
+      },
+      "shell": {
+        "algorithm": "\nvar unsortedArray = [35, -8, 11, 1, 68, 0, 3];\n\nfunction shellSort (a) {\n  for (var h = a.length; h = parseInt(h / 2);) {\n    for (var i = h; i < a.length; i++) {\n      var k = a[i];\n      for (var j = i; j >= h && k < a[j - h]; j -= h)\n        a[j] = a[j - h];\n      a[j] = k;\n    }\n  }\n  return a;\n}\n\nconsole.log(shellSort(unsortedArray)); // [ -8, 0, 1, 3, 11, 35, 68 ]\n        ",
+        "space": {
+          "worst": "O(1)"
+        },
+        "time": {
+          "best": "O(n)",
+          "worst": "O(n (log(n))²)"
+        }
+      },
+      "quick": {
+        "algorithm": "\nvar unsortedArray = [5, 1, 2, 9, 5, 9, 7, 4, 8, 0, 5, 3, 2, 5, 8, 0];\n\nfunction quickSort(array) {\n  if (array.length <= 1) {\n    return array;\n  }\n\n  var pivotIndex = Math.floor(array.length / 2);\n  var pivotValue = array[pivotIndex];\n  array.splice(pivotIndex, 1);\n\n  var lesser = [];\n  var greater = [];\n\n  for (var x = 0; x < array.length; x++) {\n    if (array[x] <= pivotValue) {\n      lesser.push(array[x]);\n    } else {\n      greater.push(array[x]);\n    }\n  }\n  return quickSort(lesser).concat(pivotValue).concat(quickSort(greater));\n}\n\nconsole.log(quickSort(unsortedArray)); // [ 0, 0, 1, 2, 2, 3, 4, 5, 5, 5, 5, 7, 8, 8, 9, 9 ]\n        ",
+        "space": {
+          "worst": "O(log(n))"
+        },
+        "time": {
+          "best": "O(n log(n))",
+          "worst": "O(n²)"
+        }
+      }
+    }
+  }
+]
