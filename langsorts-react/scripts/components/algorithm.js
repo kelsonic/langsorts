@@ -6,11 +6,6 @@ class Algorithm extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    hljs.initHighlighting();
-    console.log("colorizing with ", hljs);
-  }
-
   render() {
     return(
       <div className="row">
