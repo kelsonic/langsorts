@@ -72,6 +72,8 @@ class AlgorithmParent extends Component {
             worst: data["time"]["worst"]
           }
         });
+        hljs.initHighlighting.called = false;
+        hljs.initHighlighting();
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
