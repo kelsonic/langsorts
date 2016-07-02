@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AlgList from './algList';
+import SortList from './sortList';
 import Algorithm from './algorithm';
 import LangList from './langList';
 import Space from './space';
@@ -11,8 +11,12 @@ class AlgorithmParent extends Component {
   constructor(props) {
     super(props);
 
+    this.changeSort = this.changeSort.bind(this);
+    this.changeLang = this.changeLang.bind(this);
+
     this.state = {
-      algorithm: "bubble",
+      sort: "bubble",
+      algCode: "x = 2",
       language: "ruby",
       space: {
         worst: "O(n)"
@@ -24,8 +28,34 @@ class AlgorithmParent extends Component {
     };
   }
 
+  changeSort(chosenSort) {
+    this.setState({
+      sort: chosenSort
+    }, 
+    // Callback function
+    function() {
+      this.callAPI();
+      console.log(this.state.sort);
+    });
+  }
+
+  changeLang(chosenLang) {
+    this.setState({
+      language: chosenLang
+    }, 
+    // Callback function
+    function() {
+      this.callAPI();
+      console.log(this.state.language);
+    });
+  }
+
   componentDidMount() {
-    let url = "http://localhost:9000/?alg=" + this.state.algorithm + "&lang=" + this.state.language;
+    this.callAPI();
+  }
+
+  callAPI() {
+    let url = "http://localhost:9000/?alg=" + this.state.sort + "&lang=" + this.state.language;
     $.ajax({
       url: url,
       method: "GET",
@@ -33,8 +63,7 @@ class AlgorithmParent extends Component {
       cache: false,
       success: function(data) {
         this.setState({
-          algorithm: data["algorithm"],
-          language: data["language"],
+          algCode: data["algorithm"],
           space: {
             worst: data["space"]["worst"]
           },
@@ -42,8 +71,7 @@ class AlgorithmParent extends Component {
             best: data["time"]["best"],
             worst: data["time"]["worst"]
           }
-        })
-        hljs.initHighlighting();
+        });
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
@@ -55,11 +83,15 @@ class AlgorithmParent extends Component {
     return(
       <div>
         <form action="/" method="GET" className="row">
-          <AlgList />
-          <LangList />
+          <SortList 
+            changeSort={this.changeSort}
+          />
+          <LangList 
+            changeLang={this.changeLang}
+          />
         </form>
         <Algorithm 
-          algorithm={this.state.algorithm}
+          algCode={this.state.algCode}
           language={this.state.language}
         />
 
