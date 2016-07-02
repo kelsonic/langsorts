@@ -55,6 +55,7 @@ class AlgorithmParent extends Component {
   }
 
   callAPI() {
+    // Change url to http://langsorts-api.herokuapp.com/?alg= on production
     let url = "http://localhost:9000/?alg=" + this.state.sort + "&lang=" + this.state.language;
     $.ajax({
       url: url,
