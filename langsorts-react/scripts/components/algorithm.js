@@ -6,13 +6,18 @@ class Algorithm extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    hljs.initHighlighting();
+    console.log("colorizing with ", hljs);
+  }
+
   render() {
     return(
       <div className="row">
         <div className="col s12 m10 offset-m1 l8 offset-l2">
           <pre className="z-depth-3">
             <code className={this.props.language}>
-              {this.props.algorithm}
+              {this.props.algCode}
             </code>
           </pre>
         </div>
