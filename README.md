@@ -40,9 +40,7 @@ seed
 npm start
 ```
 
-The API will be running on [localhost:9000](http://localhost:9000/).
-
-This API will look like:
+The API will be running on [localhost:9000](http://localhost:9000/). It's URL should look like:
 
 localhost:9000/?lang=**Ruby**&alg=**bubble**
 
