@@ -23,7 +23,7 @@ View it at [www.LangSorts.com](http://langsorts.com).
 ```
 git clone https://github.com/kelsonic/langsorts.git
 
-cd /langsorts/langsorts-api
+cd langsorts/langsorts-api
 
 npm install
 
