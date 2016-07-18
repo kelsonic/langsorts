@@ -44,14 +44,14 @@ The API will be running on [localhost:9000](http://localhost:9000/).
 
 This API will look like:
 
-localhost:9000/?lang=*Ruby*&alg=*bubble*
+localhost:9000/?lang=**Ruby**&alg=**bubble**
 
-*Ruby* can currently be changed to:
+**Ruby**, your chosen programming language, can currently be changed to:
 
 1. Ruby
 2. JavaScript
 
-*bubble* can currently be changed to:
+**bubble**, your chosen sorting algorithm, can currently be changed to:
 
 1. bubble
 2. heap
