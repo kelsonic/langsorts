@@ -33,12 +33,33 @@ npm install -g node-mongo-seeds
 mongod --dbpath /{pathOfLangsortsDirectory}/langsorts-api/data
 
 // do this in a separate terminal
-seed
+seed 
+
+// You may see Error: Cannot find module '../build/Release/bson', it shouldn't be a problem
 
 npm start
 ```
 
 The API will be running on [localhost:9000](http://localhost:9000/).
+
+This API will look like:
+
+localhost:9000/?lang=*Ruby*&alg=*bubble*
+
+*Ruby* can currently be changed to:
+
+1. Ruby
+2. JavaScript
+
+*bubble* can currently be changed to:
+
+1. bubble
+2. heap
+3. insertion
+4. merge
+5. selection
+6. shell
+7. quick
 
 ## Using the Client-Side Framework
 
